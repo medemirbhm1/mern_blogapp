@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "my personal blogapp",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "server": "nodemon backend/server.mjs"
+  },
+  "author": "mohamed emir bouhamar",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
