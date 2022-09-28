@@ -25,7 +25,7 @@ export const addCategory = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Category already exists");
   }
-  const category = await Category.create({ name, color });
+  const category = await Category.create({ name, color, postNb: 0 });
   res.status(200);
   res.send(category);
 });
@@ -34,17 +34,17 @@ export const addCategory = asyncHandler(async (req, res) => {
 // @route PUT /api/categories/:id
 // @access Private
 export const updateCategory = asyncHandler(async (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const category = await Category.findById(id);
   if (!category) {
     res.status(400);
     throw new Error("Category not found");
   }
-  const updatedGoal = await Category.findByIdAndUpdate(id, req.body, {
+  const updatedCategory = await category.updateOne( req.body, {
     new: true,
   });
   res.status(200);
-  res.send(updatedGoal);
+  res.send(updatedCategory);
 });
 // @desc Delete category
 // @route DELETE /api/categories/:id

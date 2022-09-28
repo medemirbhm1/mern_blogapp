@@ -9,10 +9,10 @@ const categorySchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a color"],
     },
-    nb: Number,
+      postNb: Number,
   },
   {
-    timeStamps: true,
+    timestamps: true,
   }
 );
 const categoryModel = mongoose.model("Category", categorySchema);
